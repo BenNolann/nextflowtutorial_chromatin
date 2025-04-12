@@ -1,5 +1,5 @@
-url: "https://bennolann.github.io/nextflowtutorial_chromatin/"
-baseurl: "/nextflowtutorial_chromatin/"
+url: https://bennolann.github.io/
+baseurl: ""
 
 remote_theme: pages-themes/minimal@v0.2.0
 plugins:
