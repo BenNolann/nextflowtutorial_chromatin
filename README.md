@@ -4,7 +4,7 @@ You will learn how to write Nextflow pipelines to make data processing a lot eas
 
 ## What is a pipeline?
 
-![alt text](Untitled.jpg)
+![alt text](pipeline.jpg)
 
 A system where data comes in and data goes out the end. We use the term pipeline to describe a bunch of bioinformatics tools grouped together in an automated way that passes data along a chain. This can be a bash script, or using a more dedicated language for the task such as **Nextflow** or **Snakemake**. Today we will learn Nextflow.
 
@@ -12,7 +12,7 @@ A system where data comes in and data goes out the end. We use the term pipeline
 
 [Nextflow](https://www.nextflow.io/) is a system that allows you to join together bash commands in a way that is reproducible and portable. It's a commonly used method of doing Bioinformatics used in both industry and academia. It puts a lot of focus on reproducibility as it works hand-in-hand with other systems such as Git and Singularity/ Docker so a bunch of people can work on these pipelines together with a portable set of software. 
 
-Here's an example ChIP-seq Nextflow pipeline from [nf-core](https://nf-co.re/), ![alt text](Untitled.png)
+Here's an example ChIP-seq Nextflow pipeline from [nf-core](https://nf-co.re/), ![alt text](nfcorechipseq.png)
 
 ## Why use Nextflow instead of just a bash script?
 
