@@ -1,6 +1,8 @@
+title: "Nextflow Tutorial"
 url: https://bennolann.github.io
 #baseurl: nextflowtutorial_chromatin/
 
 remote_theme: pages-themes/minimal@v0.2.0
 plugins:
 - jekyll-remote-theme 
+- jekyll-seo-tag
