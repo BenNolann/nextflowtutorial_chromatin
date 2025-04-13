@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>About | Nextflow Tutorial</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="About" />
+<meta name="author" content="Ben Nolan" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="http://localhost:4000/intro/" />
+<meta property="og:url" content="http://localhost:4000/intro/" />
+<meta property="og:site_name" content="Nextflow Tutorial" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="About" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Ben Nolan"},"headline":"About","url":"http://localhost:4000/intro/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1><a href="http://localhost:4000/">Nextflow Tutorial</a></h1>
+
+        
+
+        <p></p>
+
+        
+
+        
+
+        
+      </header>
+      <section>
+
+      <h2 id="what-is-a-pipeline">What is a pipeline?</h2>
+
+<p><img src="pipeline.jpg" alt="alt text" /></p>
+
+<p>A system where data comes in and data goes out the end. We use the term pipeline to describe a bunch of bioinformatics tools grouped together in an automated way that passes data along a chain. This can be a bash script, or using a more dedicated language for the task such as <strong>Nextflow</strong> or <strong>Snakemake</strong>. Today we will learn Nextflow.</p>
+
+<h2 id="what-is-nextflow">What is Nextflow?</h2>
+
+<p><a href="https://www.nextflow.io/">Nextflow</a> is a system that allows you to join together bash commands in a way that is reproducible and portable. It’s a commonly used method of doing Bioinformatics used in both industry and academia. It puts a lot of focus on reproducibility as it works hand-in-hand with other systems such as Git and Singularity/ Docker so a bunch of people can work on these pipelines together with a portable set of software.</p>
+
+<p>Here’s an example ChIP-seq Nextflow pipeline from <a href="https://nf-co.re/">nf-core</a>, <img src="nfcorechipseq.png" alt="alt text" /></p>
+
+<h2 id="why-use-nextflow-instead-of-just-a-bash-script">Why use Nextflow instead of just a bash script?</h2>
+
+<p>The answer is that Nextflow adds a ton of features that allow you to make your pipelines more complex with less code. A few of these features are:</p>
+
+<ul>
+  <li>Ability to run all your samples <em>in parallel</em> - this is the coolest feature as it makes it run really fast (provided you have enough computational resources).</li>
+  <li>If you re-run a pipeline, Nextflow will check what has changed, be it in the script or in the input data. All that is the same will not be re-run. This allows you to continuously test your pipeline as you add new processes without re-running the entire pipeline everytime. Plus if you have a new replicate, it won’t re-run all your other replicates.</li>
+  <li>Integrates the use of Docker/ Singularity. Containerized software makes like a lot easier.</li>
+</ul>
+
+<h2 id="today">Today</h2>
+
+<p>Although there are a lot of Nextflow pipelines already out there to use, today we are going to make our own one from scratch! The ability to create your own pipelines will help you in whatever analysis you like to do. Plus if you look up jobs in bioinformatics online almost every one looks for this skill.</p>
+
+<p>Let’s make a protein occupancy pipeline that allows the user to select between ChIP-seq or CUT&amp;RUN.</p>
+
+
+      </section>
+      <footer>
+        
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="/assets/js/scale.fix.js"></script>
+  </body>
+</html>

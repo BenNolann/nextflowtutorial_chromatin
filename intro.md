@@ -1,5 +1,5 @@
 ---
-layout: intro
+layout: default
 title: About
 permalink: /intro/
 author: Ben Nolan
