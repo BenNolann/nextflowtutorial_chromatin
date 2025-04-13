@@ -1,3 +1,10 @@
+---
+layout: intro
+title: About
+permalink: /intro/
+author: Ben Nolan
+---
+
 ## What is a pipeline?
 
 ![alt text](pipeline.jpg)
