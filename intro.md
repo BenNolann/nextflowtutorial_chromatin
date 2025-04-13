@@ -1,8 +1,6 @@
 ---
 layout: default
-title: About
-permalink: /intro/
-author: Ben Nolan
+title: Introduction
 ---
 
 ## What is a pipeline?
