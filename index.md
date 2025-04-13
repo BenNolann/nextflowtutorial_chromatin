@@ -3,9 +3,8 @@ layout: default
 title: Landing
 ---
 
-## Nextflow Tutorial
+# DECODE Data Processing Lesson
 
+## [Chapter 1: What is Nextflow and Why](./intro.html)
 
-### What is Nextflow and Why
-
-[Let's get started](./intro.html).
+## [Chapter 2: The Pipeline We Will Build](./2_build.html)
