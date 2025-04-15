@@ -53,11 +53,54 @@
       </header>
       <section>
 
-      <h2 id="the-outline">The Outline</h2>
+      <p>First we need to get our Software in order.</p>
 
-<p>Our goal is to process protein protein occupancy data, be it ChIP-seq or CUT&amp;RUN by passing sequencing data along numerous tools. The overall outline of this process will be something like this:</p>
+<h2 id="slurm">SLURM</h2>
 
-<p><img src="pipeline_flow.png" alt="alt text" /></p>
+<ol>
+  <li>
+    <p>Allocate memory for this session</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> srun <span class="nt">--qos</span><span class="o">=</span>short <span class="nt">--mem</span><span class="o">=</span>5gb <span class="nt">--time</span><span class="o">=</span>03:00:00 <span class="nt">--pty</span> <span class="nv">$SHELL</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Load miniforge and nano modules</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> module purge
+ module load miniforge nano
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h2 id="setting-up-a-conda-environment">Setting up a Conda environment</h2>
+
+<ol>
+  <li>
+    <p>Download the yaml file:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> wget https://raw.githubusercontent.com/BenNolann/nextflowtutorial_chromatin/refs/heads/main/environment_hcc.yml
+</code></pre></div>    </div>
+
+    <p>(OPTIONAL) Look inside with:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> nano environment_hcc.yml
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Build conda environment (mamba is the same thing it’s just written in C++ and is faster.)</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mamba <span class="nb">env </span>create <span class="nt">-n</span> nf-training <span class="nt">-f</span> environment_hcc.yml
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Activate environment</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> conda activate nf-training
+</code></pre></div>    </div>
+  </li>
+</ol>
+
 
 
       </section>
