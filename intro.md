@@ -25,6 +25,8 @@ The answer is that Nextflow adds a ton of features that allow you to make your p
 
 ## Today
 
-Although there are a lot of Nextflow pipelines already out there to use, today we are going to make our own one from scratch! The ability to create your own pipelines will help you in whatever analysis you like to do. Plus if you look up jobs in bioinformatics online almost every one looks for this skill.
+Although there are a lot of Nextflow pipelines already out there to use, today we are going to make some from scratch! The ability to create your own pipelines will help you in whatever analysis you like to do. Plus if you look up jobs in bioinformatics online almost every one looks for this skill.
 
-Let's make a protein occupancy pipeline that allows the user to select between ChIP-seq or CUT&RUN. 
+Like all scripts, the complexity of a Nextflow script is completely up to you. So after this class be sure to try incorporate it into your own research and build custom pipelines that you and your lab can use!
+
+Today we will start off with some basic commands in nextflow and then build up.

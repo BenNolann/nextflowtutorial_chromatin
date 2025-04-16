@@ -9,4 +9,13 @@ This lesson is attributed to the [Holland Computing Center Nextflow Workshop](ht
 
 ## [Chapter 1: What is Nextflow and Why](./intro.html)
 
-## [Chapter 2: Setting up Nextflow on the HCC](./2_build.html)
+## [Chapter 2: Setting up our Environment on the HCC](./2_build.html)
+
+## [Chapter 3: Getting Familiar with Nextflow](./3_familiar.html)
+
+## [Chapter 4: Conditional Parameters](./4_conditional.html)
+
+## [Chapter 5: Asynchronous Nature](./5_asynchronous.html)
+
+## [Chapter 6: Debugging](./6_debugging.html)
+

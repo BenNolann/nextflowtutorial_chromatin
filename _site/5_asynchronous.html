@@ -6,18 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Landing | Nextflow Tutorial</title>
+<title>Asynchronous | Nextflow Tutorial</title>
 <meta name="generator" content="Jekyll v4.4.1" />
-<meta property="og:title" content="Landing" />
+<meta property="og:title" content="Asynchronous" />
 <meta property="og:locale" content="en_US" />
-<link rel="canonical" href="http://localhost:4000/" />
-<meta property="og:url" content="http://localhost:4000/" />
+<link rel="canonical" href="http://localhost:4000/5_asynchronous.html" />
+<meta property="og:url" content="http://localhost:4000/5_asynchronous.html" />
 <meta property="og:site_name" content="Nextflow Tutorial" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Landing" />
+<meta property="twitter:title" content="Asynchronous" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","headline":"Landing","name":"Nextflow Tutorial","url":"http://localhost:4000/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","headline":"Asynchronous","url":"http://localhost:4000/5_asynchronous.html"}</script>
 <!-- End Jekyll SEO tag -->
 
     <link rel="stylesheet" href="/assets/css/style.css?v=">
@@ -53,22 +53,40 @@
       </header>
       <section>
 
-      <h1 id="decode-data-processing-lesson">DECODE Data Processing Lesson</h1>
+      <h2 id="how-nextflow-works">How Nextflow Works</h2>
 
-<p>This lesson is attributed to the <a href="https://hcc.unl.edu/nextflow-2024-workshop-links">Holland Computing Center Nextflow Workshop</a>. The lesson from HCC is much longer than what we will be learning today, and if you would like to learn more about Nextflow please visit their site linked above.</p>
+<p>Nextflow runs each input sample in an asynchronous nature.</p>
 
-<h2 id="chapter-1-what-is-nextflow-and-why"><a href="./intro.html">Chapter 1: What is Nextflow and Why</a></h2>
+<p><img src="async.png" alt="alt text" /></p>
 
-<h2 id="chapter-2-setting-up-our-environment-on-the-hcc"><a href="./2_build.html">Chapter 2: Setting up our Environment on the HCC</a></h2>
+<ol>
+  <li>
+    <p>Run the following script</p>
 
-<h2 id="chapter-3-getting-familiar-with-nextflow"><a href="./3_familiar.html">Chapter 3: Getting Familiar with Nextflow</a></h2>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> nextflow run scripts/process/process_input_value.nf <span class="nt">-process</span>.debug
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Explain what the script is doing.</p>
+  </li>
+  <li>
+    <p>Rerun the script. Has anything changed?</p>
+  </li>
+</ol>
 
-<h2 id="chapter-4-conditional-parameters"><a href="./4_conditional.html">Chapter 4: Conditional Parameters</a></h2>
+<h2 id="counting-lines-in-multiple-files">Counting lines in multiple files</h2>
 
-<h2 id="chapter-5-asynchronous-nature"><a href="./5_asynchronous.html">Chapter 5: Asynchronous Nature</a></h2>
+<ol>
+  <li>
+    <p>Run the following script</p>
 
-<h2 id="chapter-6-debugging"><a href="./6_debugging.html">Chapter 6: Debugging</a></h2>
-
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> nextflow run scripts/process/process_input_file.nf <span class="nt">-process</span>.debug
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Rerun the script again.</p>
+  </li>
+</ol>
 
 
       </section>

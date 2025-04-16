@@ -101,6 +101,40 @@
   </li>
 </ol>
 
+<h2 id="getting-test-data-and-test-nextflow-scripts">Getting Test Data and Test Nextflow Scripts</h2>
+
+<p>Downloading our test data and pre-made short Nextflow scripts for you to experiment with and tweak.</p>
+
+<ol>
+  <li>
+    <p>Download a bunch of test data. Heavily subsampled fastq files that will run very fast.</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> wget <span class="nt">--content-disposition</span> https://ndownloader.figshare.com/files/28531743
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Decompress the data and remove the compressed version.</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nb">tar</span> <span class="nt">-xvf</span> data.tar.gz
+ <span class="nb">rm </span>data.tar.gz
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Download test repository</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> wget https://github.com//carpentries-incubator/workflows-nextflow/archive/main.zip
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Decompress zip, remove zip, grab scripts from repo, and delete the repo.</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> unzip main.zip
+ <span class="nb">rm </span>main.zip
+ <span class="nb">mv </span>workflows-nextflow-main/episodes/files/scripts/ <span class="nb">.</span>
+ <span class="nb">rm</span> <span class="nt">-rf</span> workflows-nextflow-main/
+</code></pre></div>    </div>
+  </li>
+</ol>
 
 
       </section>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Debugging | Nextflow Tutorial</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Debugging" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="http://localhost:4000/6_debugging.html" />
+<meta property="og:url" content="http://localhost:4000/6_debugging.html" />
+<meta property="og:site_name" content="Nextflow Tutorial" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Debugging" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","headline":"Debugging","url":"http://localhost:4000/6_debugging.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1><a href="http://localhost:4000/">Nextflow Tutorial</a></h1>
+
+        
+
+        <p></p>
+
+        
+
+        
+
+        
+      </header>
+      <section>
+
+      <h2 id="how-to-debug-nextflow">How to debug Nextflow</h2>
+
+<p>When you run a nextflow pipeline, a bunch of data is saved about that run and it is all saved in your directory. But there’s a lot of files and it can be quite overwhelming. The key is to understand what to look for and then you can really take advantage of all this information.</p>
+
+<ol>
+  <li>
+    <p>What recent pipeline runs have I done?</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> nextflow log
+</code></pre></div>    </div>
+
+    <p>Too many? Shorten the output</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> nextflow log | <span class="nb">tail</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>My pipeline gave a weird result/ or it failed! How do I investigate this?</p>
+
+    <p>We need to look inside the log file for our nextflow run. The most recent is saved as <code class="language-plaintext highlighter-rouge">.nextflow.log</code>, the second last is saved as <code class="language-plaintext highlighter-rouge">.nextflow.log.1</code> up to <code class="language-plaintext highlighter-rouge">.nextflow.log.9</code>. After 10 pipeline runs you’ll start losing these log files unless you’re saving them somewhere.</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nb">tail</span> .nextflow.log
+</code></pre></div>    </div>
+
+    <p>For every event that saw data go through a process in your pipeline, you’ll find an entry in this log. It will look something like this:</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> Apr-16 15:05:47.471 [Task submitter] INFO  nextflow.Session - [9e/7963cf] Submitted process &gt; NUMLINES (6)
+</code></pre></div>    </div>
+    <p><strong>NOTE:</strong> the [9e/7963cf]. This is unique to this event. Yours will be different.</p>
+
+    <p>This is where you can investigate that event.</p>
+
+    <p>In Nextflow, you will notice a <code class="language-plaintext highlighter-rouge">work</code> directory saved where you’ve been running these pipelines. All of these ‘events’ are stored here. The power of Nextflow is in here, despite it looking terrifying.</p>
+  </li>
+</ol>
+
+
+      </section>
+      <footer>
+        
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="/assets/js/scale.fix.js"></script>
+  </body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Familiar | Nextflow Tutorial</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Familiar" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="http://localhost:4000/3_familiar.html" />
+<meta property="og:url" content="http://localhost:4000/3_familiar.html" />
+<meta property="og:site_name" content="Nextflow Tutorial" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Familiar" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","headline":"Familiar","url":"http://localhost:4000/3_familiar.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1><a href="http://localhost:4000/">Nextflow Tutorial</a></h1>
+
+        
+
+        <p></p>
+
+        
+
+        
+
+        
+      </header>
+      <section>
+
+      <h2 id="basic-structure-of-nextflow">Basic Structure of Nextflow</h2>
+
+<p>Channels</p>
+
+<p>Operators</p>
+
+<p>Processes</p>
+
+<h2 id="our-first-script">Our First Script</h2>
+
+<p>For our first look into Nextflow, we will be using a simple script that counts the number of words in a fastq.</p>
+
+<ol>
+  <li>
+    <p>Copy the script to our work directory.</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nb">cp </span>scripts/introduction/word_count.nf <span class="nb">.</span>
+</code></pre></div>    </div>
+
+    <p>Have a look inside</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> more word_count.nf
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Run the script!</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> nextflow run word_count.nf
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Change a parameter</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> nextflow run word_count.nf <span class="nt">--input</span> <span class="s1">'data/yeast/reads/ref2_*.fq.gz'</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Parameter changes as an input file instead</p>
+
+    <p>Copy this JSON file that has updated parameters for word_count.nf</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nb">cp </span>scripts/parameters/wc-params.json <span class="nb">.</span>
+ more wc-params.json
+</code></pre></div>    </div>
+
+    <p>Run this pipeline again but with the JSON file</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> nextflow run word_count.nf <span class="nt">-params-file</span> wc-params.json
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<p><strong>NOTE</strong>:</p>
+
+<ul>
+  <li>Parameters for Nextflow are used with <code class="language-plaintext highlighter-rouge">-</code></li>
+  <li>Parameters for your Nextflow script are used with <code class="language-plaintext highlighter-rouge">--</code></li>
+</ul>
+
+
+
+      </section>
+      <footer>
+        
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="/assets/js/scale.fix.js"></script>
+  </body>
+</html>
