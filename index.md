@@ -19,3 +19,7 @@ This lesson is attributed to the [Holland Computing Center Nextflow Workshop](ht
 
 ## [Chapter 6: Debugging](./6_debugging.html)
 
+## [Chapter 7: RNA-seq Pipeline](./7_slingshot.html)
+
+## [Illustrator](./8_illustrator.html)
+

@@ -37,3 +37,9 @@ When you run a nextflow pipeline, a bunch of data is saved about that run and it
     This is where you can investigate that event. 
 
     In Nextflow, you will notice a `work` directory saved where you've been running these pipelines. All of these 'events' are stored here. The power of Nextflow is in here, despite it looking terrifying.
+
+    ```bash
+    cd work/9e/7963cf/
+    ```
+
+    This folder contains all input files and output files for that event, as well as scripts containing the code needed to run that specific event. This is great for debugging. 
