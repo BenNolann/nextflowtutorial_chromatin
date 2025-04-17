@@ -31,7 +31,13 @@ Can this tool export an image as an 'svg'? If so, it makes working with it in Il
 
 ## Combine the below images into a figure panel. 
 
-* 
+* Download images.
+
+    ```bash
+    wget -O volcanoSVG.svg https://github.com/BenNolann/nextflowtutorial_chromatin/blob/main/volcanoSVG.svg?raw=true
+    wget -O pcaplotFAKE.png https://github.com/BenNolann/nextflowtutorial_chromatin/blob/main/pcaplotFAKE.png?raw=true
+    wget -O genetypesSVG.svg https://github.com/BenNolann/nextflowtutorial_chromatin/blob/main/genetypesSVG.svg?raw=true
+    ```
 
 Open up Illustrator, create a new file and import these images in.
 
