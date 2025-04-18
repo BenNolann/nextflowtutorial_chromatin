@@ -5,11 +5,62 @@ title: Familiar
 
 ## Basic Structure of Nextflow
 
-Channels
+[Channels](https://www.nextflow.io/docs/latest/channel.html)
 
-Operators
+![alt image](channel-process_fqc.png)
 
-Processes
+
+[Operators](https://www.nextflow.io/docs/latest/reference/operator.html)
+
+Many ways in which you can manipulate the data in channels. This is essential for feeding data in and out of processes.
+
+![alt image](operators.png)
+
+[Processes](https://www.nextflow.io/docs/latest/process.html)
+
+Below you'll find an example 'Process' inside Nextflow a ChIP-seq pipeline. For the peak calling step we are using MACS3. The basics we need are:
+
+1. Input
+2. Output
+3. Script
+
+Other features we've added here are
+
+* tag
+* publishDir
+* multiple outputs using 'emit'
+
+And theres many more features that are not in this process that you could add, including 
+
+```nextflow
+process MACS3 {
+    tag "$key"
+    publishDir "${params.outdir}/macs3/$key", pattern:"*", mode: 'copy'
+
+    input:
+    tuple val(key), path(bamip), path(baminput)
+
+    output:
+    tuple val(key), path("*eak"), emit: peak
+    tuple val(key), path("*eak"), path(bamip), emit: peakbam
+    path("*.xls"), emit: excel
+    path("*"), emit: allelse
+
+    script:
+
+    """
+    macs3 \\
+            callpeak \\
+            -t $bamip \\
+            -c $baminput \\
+            -n $key \\
+            -g hs \\
+            --call-summits
+    """ 
+}
+```
+
+
 
 ## Our First Script
 

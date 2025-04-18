@@ -55,11 +55,62 @@
 
       <h2 id="basic-structure-of-nextflow">Basic Structure of Nextflow</h2>
 
-<p>Channels</p>
+<p><a href="https://www.nextflow.io/docs/latest/channel.html">Channels</a></p>
 
-<p>Operators</p>
+<p><img src="channel-process_fqc.png" alt="alt image" /></p>
 
-<p>Processes</p>
+<p><a href="https://www.nextflow.io/docs/latest/reference/operator.html">Operators</a></p>
+
+<p>Many ways in which you can manipulate the data in channels. This is essential for feeding data in and out of processes.</p>
+
+<p><img src="operators.png" alt="alt image" /></p>
+
+<p><a href="https://www.nextflow.io/docs/latest/process.html">Processes</a></p>
+
+<p>Below you’ll find an example ‘Process’ inside Nextflow a ChIP-seq pipeline. For the peak calling step we are using MACS3. The basics we need are:</p>
+
+<ol>
+  <li>Input</li>
+  <li>Output</li>
+  <li>Script</li>
+</ol>
+
+<p>Other features we’ve added here are</p>
+
+<ul>
+  <li>tag</li>
+  <li>publishDir</li>
+  <li>multiple outputs using ‘emit’</li>
+</ul>
+
+<p>And theres many more features that are not in this process that you could add, including</p>
+
+<div class="language-nextflow highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">process</span> <span class="n">MACS3</span> <span class="o">{</span>
+    <span class="n">tag</span> <span class="s2">"$key"</span>
+    <span class="n">publishDir</span> <span class="s2">"${params.outdir}/macs3/$key"</span><span class="o">,</span> <span class="nl">pattern:</span><span class="s2">"*"</span><span class="o">,</span> <span class="nl">mode:</span> <span class="s1">'copy'</span>
+
+    <span class="nl">input:</span>
+    <span class="n">tuple</span> <span class="nf">val</span><span class="o">(</span><span class="n">key</span><span class="o">),</span> <span class="n">path</span><span class="o">(</span><span class="n">bamip</span><span class="o">),</span> <span class="n">path</span><span class="o">(</span><span class="n">baminput</span><span class="o">)</span>
+
+    <span class="nl">output:</span>
+    <span class="n">tuple</span> <span class="nf">val</span><span class="o">(</span><span class="n">key</span><span class="o">),</span> <span class="n">path</span><span class="o">(</span><span class="s2">"*eak"</span><span class="o">),</span> <span class="nl">emit:</span> <span class="n">peak</span>
+    <span class="n">tuple</span> <span class="nf">val</span><span class="o">(</span><span class="n">key</span><span class="o">),</span> <span class="n">path</span><span class="o">(</span><span class="s2">"*eak"</span><span class="o">),</span> <span class="n">path</span><span class="o">(</span><span class="n">bamip</span><span class="o">),</span> <span class="nl">emit:</span> <span class="n">peakbam</span>
+    <span class="n">path</span><span class="o">(</span><span class="s2">"*.xls"</span><span class="o">),</span> <span class="nl">emit:</span> <span class="n">excel</span>
+    <span class="n">path</span><span class="o">(</span><span class="s2">"*"</span><span class="o">),</span> <span class="nl">emit:</span> <span class="n">allelse</span>
+
+    <span class="nl">script:</span>
+
+    <span class="s2">"""
+    macs3 \\
+            callpeak \\
+            -t $bamip \\
+            -c $baminput \\
+            -n $key \\
+            -g hs \\
+            --call-summits
+    """</span> 
+<span class="o">}</span>
+</code></pre></div></div>
 
 <h2 id="our-first-script">Our First Script</h2>
 
