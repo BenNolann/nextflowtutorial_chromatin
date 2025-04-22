@@ -47,3 +47,13 @@ In your figure panel, complete the following tasks:
 2. Create a diagram for the experimental design (Doesn't have to be real)
 3. Create a final model describing the biological process (Also doesn't have to be real).
 4. Export the image as a png.
+
+**LINKS:**
+
+Youtube tutorials that are amazing:
+
+[*Making Scientific Figures with Illustrator*](https://www.youtube.com/watch?v=3IuoK07YDds&list=PLRCLlYmhDNMyTLhQCtlPryR_6odf6tBBF)
+
+
+[*Scientific Illustration Channel for Scientists*](https://www.youtube.com/@DrawBioMed)
+
